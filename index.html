@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Harry Potter Sorting Hat Quiz</title>
+
+<!-- My Custom CSS -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Oswald:wght@200;300;400;500&display=swap');
+
+
+/*DIV IDS*/
+#main {
+width: 100%;
+max-width: 950px;
+border: 3px black solid;
+margin: auto;
+padding: 10px;
+background-color: #FAEDEC;
+border-radius: 10px;
+margin-top: 10px;
+position: relative;
+}
+
+#header {
+border: 2px solid black;
+padding: 5px;
+height: 250px;
+background: beige;
+background-image: url("banner5.jpg");
+color: white;
+width: 100%;
+margin: auto;
+position: relative;
+max-width: 950px;
+background-size: 100% 100%;
+}
+
+#button
+{
+font-family: noto serif;
+padding-top: 40px;
+padding-left: 30px;
+font-size: 16px;
+}
+
+#answer
+{
+	display: none;
+}
+
+#answer2
+{
+font-family: Oswald;
+font-size: 25px;
+font-weight: 500;
+}
+
+
+
+/*TEXT & OTHER*/
+body {
+background: linear-gradient(black, #150202, #2B0705);
+}
+
+label {
+display: block;
+}
+
+input {
+max-width: 30px;
+margin-left: 20px;
+}
+
+button {
+width: 100px;
+margin-top: 20px;
+}
+
+h3{
+font-family: Oswald;
+font-size: 25px;
+padding-top: 30px;
+padding-bottom: 10px;
+margin-left: 10px;
+}
+
+h4
+{
+font-family: noto serif;
+font-weight: 400;
+font-size: 17px;
+padding-top: 35px;
+margin-left: 30px;
+margin-right: 30px;
+text-align: center;
+}
+
+label
+{
+  font-family: noto serif;
+  font-weight: 400;
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+
+
+/*MEDIA QUERY*/
+/* For width smaller than 950px: */
+@media screen and (max-width: 950px){
+h3 {
+	font-size: 23px;
+}
+h4{
+	font-size: 16px;
+}
+label{
+	font-size: 17px;
+}
+}
+
+/* For width smaller than 850px: */
+@media screen and (max-width: 850px){
+#header {
+  background-image: url('banner5.jpg');
+  height: 200px;
+}
+h3 {
+	font-size: 22px;
+}
+h4{
+	font-size: 16px;
+}
+label{
+	font-size: 15px;
+}
+}
+
+/* For width smaller than 750px: */
+@media screen and (max-width: 750px){
+#header {
+  background-image: url('banner5.jpg');
+  display: none;
+}
+h3 {
+	font-size: 20px;
+}
+h4{
+	font-size: 15px;
+}
+label{
+	font-size: 14px;
+}
+}
+</style> <!-- END CSS -->
+</head>
+
+
+<body> <!-- open body -->
+<div id="main"><!-- open main div -->
+<div id="header"><!-- open header div -->
+</div><!-- close header div -->
+
+<h4>This quiz is designed to help you determine which Hogwarts house you belong to. Fill out the questions below to find out if you are in Griffindor, Hufflepuff, Slytherin or Ravenclaw.</h4>
+<form id="hpquiz">
+
+<!--QUESTION 1-->
+  <div class="container">
+      <div class="row">
+  <h3>1. Which best describes you?</h3>
+</div>
+</div>
+
+<div class="container">
+  <div class="row row-cols-2">
+    <div class="col-md-6"><label for="brave"><input type="radio" name="q1" value="1" id="brave" />Brave and Couragous</label></div>
+    <div class="col-md-6"><label for="loyal"><input type="radio" name="q1" value="3" id="loyal" />Loyal and Hardworking</label></div>
+    <div class="col-md-6"><label for="resourceful"><input type="radio" name="q1" value="2" id="resourceful" />Resourceful and Cunning</label></div>
+    <div class="col-md-6"><label for="clever"><input type="radio" name="q1" value="4" id="clever" />Clever and Creative</label></div>
+  </div>
+</div>
+
+<!--QUESTION 2-->
+<div class="container">
+      <div class="row">
+  <h3>2. Which chracter is your favorite?</h3>
+</div>
+</div>
+
+<div class="container">
+  <div class="row row-cols-2">
+    <div class="col-md-6"><label for="bella"><input type="radio" name="q2" value="2" id="bella" />Bellatrix Lestrange</label></div>
+    <div class="col-md-6"><label for="luna"><input type="radio" name="q2" value="4" id="luna" />Luna Lovegood</label></div>
+    <div class="col-md-6"><label for="ced"><input type="radio" name="q2" value="3" id="ced" />Cedric Diggory</label></div>
+    <div class="col-md-6"><label for="sir"><input type="radio" name="q2" value="1" id="sir" />Sirius Black</label></div>
+  </div>
+</div>
+
+
+<!--QUESTION 3-->
+
+<div class="container">
+      <div class="row">
+  <h3>3. You catch someone sneaking around the restricted section of the library, what do you do?</h3>
+      </div>
+</div>
+
+<div class="container">
+    <div class="col-lg-12"><label for="run"><input type="radio" name="q3" value="3" id="run" />I run and tell someone immediately.</label></div>
+    <div class="col-lg-12"><label for="threat"><input type="radio" name="q3" value="2" id="threat" />I threaten to turn them in unless they tell me what they know.</label></div>
+    <div class="col-lg-12"><label for="hide"><input type="radio" name="q3" value="4" id="hide" />I hide and watch what they do.</label></div>
+    <div class="col-lg-12"><label for="tell"><input type="radio" name="q3" value="1" id="tell" />I tell them they should not be in the restricted section, but I don't tell on them.</label></div>
+</div>
+
+<!--QUESTION 4-->
+<div class="container">
+      <div class="row">
+  <h3>4. Choose a magical creature.</h3>
+</div>
+</div>
+
+<div class="container">
+  <div class="row row-cols-2">
+    <div class="col-md-3"><label for="corn"><input type="radio" name="q4" value="2" id="corn" />Cornish Pixie</label></div>
+    <div class="col-md-3"><label for="hippo"><input type="radio" name="q4" value="1" id="hippo" />Hippogriff</label></div>
+    <div class="col-md-3"><label for="pho"><input type="radio" name="q4" value="4" id="pho" />Phoenix</label></div>
+    <div class="col-md-3"><label for="house"><input type="radio" name="q4" value="3" id="house" />House Elf</label></div>
+  </div>
+</div>
+
+
+<!--QUESTION 5-->
+
+<div class="container">
+      <div class="row">
+  <h3>5. What's your favorite activity?</h3>
+</div>
+</div>
+
+<div class="container">
+  <div class="row row-cols-2">
+    <div class="col-lg-12"><label for="quid"><input type="radio" name="q5" value="1" id="quid" />Quidditch</label></div>
+    <div class="col-lg-12"><label for="dark"><input type="radio" name="q5" value="2" id="dark" />Studying the dark arts</label></div>
+    <div class="col-lg-12"><label for="pot"><input type="radio" name="q5" value="4" id="pot" />Practicing potions</label></div>
+    <div class="col-lg-12"><label for="herb"><input type="radio" name="q5" value="3" id="herb" />Studying herbology</label></div>
+  </div>
+</div>
+
+
+<!--QUESTION 6-->
+<div class="container">
+      <div class="row">
+  <h3>6. Cast a spell.</h3>
+</div>
+</div>
+
+<div class="container">
+  <div class="row row-cols-2">
+    <div class="col-md-6"><label for="expell"><input type="radio" name="q6" value="1" id="expell" />Expelliarmus</label></div>
+    <div class="col-md-6"><label for="expect"><input type="radio" name="q6" value="3" id="expect" />Expecto Patronum</label></div>
+    <div class="col-md-6"><label for="wing"><input type="radio" name="q6" value="4" id="wing" />Wingardium Leviosa</label></div>
+    <div class="col-md-6"><label for="sect"><input type="radio" name="q6" value="2" id="sect" />Sectumsempra</label></div>
+  </div>
+</div>
+
+
+<!--QUESTION 7-->
+
+<div class="container">
+      <div class="row">
+  <h3>7. Select an item.</h3>
+</div>
+</div>
+
+<div class="container">
+  <div class="row row-cols-2">
+    <div class="col-md-6"><label for="cup"><input type="radio" name="q7" value="3" id="cup" />Hufflepuff's Cup</label></div>
+    <div class="col-md-6"><label for="sword"><input type="radio" name="q7" value="1" id="sword" />Sword of Gryffindor</label></div>
+    <div class="col-md-6"><label for="dia"><input type="radio" name="q7" value="4" id="dia" />Ravenclaw's Diadem</label></div>
+    <div class="col-md-6"><label for="lock"><input type="radio" name="q7" value="2" id="lock" />Slytherin's Locket</label></div>
+  </div>
+</div>
+
+
+
+<!--QUESTION 8-->
+
+<div class="container">
+      <div class="row">
+  <h3>8. Pick your potion.</h3>
+</div>
+</div>
+
+<div class="container">
+  <div class="row row-cols-2">
+    <div class="col-md-3"><label for="luck"><input type="radio" name="q8" value="1" id="luck" />Liquid Luck</label></div>
+    <div class="col-md-3"><label for="ver"><input type="radio" name="q8" value="4" id="ver" />Veritaserum</label></div>
+    <div class="col-md-3"><label for="poly"><input type="radio" name="q8" value="2" id="poly" />Polyjuice Potion</label></div>
+    <div class="col-md-3"><label for="skele"><input type="radio" name="q8" value="3" id="skele" />Skele-Gro Potion</label></div>
+  </div>
+</div>
+
+
+<div id="button">
+<div class="container">
+    <div class="row">
+      <div class="col-sm-auto">
+<button type="submit" value="submit">Submit</button>
+<button type="reset" value="reset">Reset</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</form>
+
+<p id="answer"></p>
+<p id="answer2"></p>
+</div> <!-- close main div -->
+
+<!-- My JS -->
+<script>
+	document.getElementById("hpquiz").onsubmit=function() {
+
+	if(document.querySelector('input[name = "q1"]:checked')&& 
+		document.querySelector('input[name = "q2"]:checked')&&
+		document.querySelector('input[name = "q3"]:checked')&&
+		document.querySelector('input[name = "q4"]:checked')&&
+		document.querySelector('input[name = "q5"]:checked')&&
+		document.querySelector('input[name = "q6"]:checked')&&
+		document.querySelector('input[name = "q7"]:checked')&&
+		document.querySelector('input[name = "q8"]:checked')){
+
+	  q1 = parseInt(document.querySelector('input[name = "q1"]:checked').value);
+
+	  q2 = parseInt(document.querySelector('input[name = "q2"]:checked').value);
+
+	  q3 = parseInt(document.querySelector('input[name = "q3"]:checked').value);
+
+	  q4 = parseInt(document.querySelector('input[name = "q4"]:checked').value);
+
+	  q5 = parseInt(document.querySelector('input[name = "q5"]:checked').value);
+
+	  q6 = parseInt(document.querySelector('input[name = "q6"]:checked').value);
+
+	  q7 = parseInt(document.querySelector('input[name = "q7"]:checked').value);
+
+	  q8 = parseInt(document.querySelector('input[name = "q8"]:checked').value);
+
+	   total= q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8;
+
+
+	   document.getElementById("answer").innerHTML = total;
+
+	   	if(total >=8 && total < 15) {
+document.getElementById("answer2").innerHTML = "You got Griffindor! <br /><img src = 'gryffindor.jpg' width= '30%'>" ;}
+
+   		if(total >=15 && total < 21) {
+document.getElementById("answer2").innerHTML = "You are in Slytherin! <br /><img src = 'slytherin.jpg' width= '30%'>";}
+
+		if(total >=21 && total < 27) {
+document.getElementById("answer2").innerHTML = "You are in Hufflepuff! <br /><img src = 'hufflepuff.jpg' width= '30%'>";}
+
+		if(total >=27 && total <=32) {
+document.getElementById("answer2").innerHTML = "You are in Ravenclaw! <br /><img src = 'ravenclaw.jpg' width= '30%'>";}
+}
+
+else {
+alert("Please answer all questions before submitting.");
+}
+
+return false; // required to not refresh the page; just leave this here
+}// end the submit function
+</script>
+
+<!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html>
